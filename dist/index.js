@@ -1,5 +1,34 @@
-"use strict";var n=function(a,r){return function(){try{return r||a((r={exports:{}}).exports,r),r.exports}catch(e){throw (r=0, e)}};};var v=n(function(x,s){
-var q=require('@stdlib/ndarray-base-numel-dimension/dist'),d=require('@stdlib/ndarray-base-strides/dist'),o=require('@stdlib/ndarray-base-stride/dist'),i=require('@stdlib/ndarray-base-offset/dist'),u=require('@stdlib/ndarray-base-data-buffer/dist'),c=require('@stdlib/blas-ext-base-dcartesian-square/dist').ndarray;function f(a){var r,e,t;return t=a[0],r=a[1],e=d(r,!1),c(q(t,0),u(t),o(t,0),i(t),u(r),e[0],e[1],i(r)),r}s.exports=f
-});var g=v();module.exports=g;
 /** @license Apache-2.0 */
-//# sourceMappingURL=index.js.map
+
+'use strict';
+
+/**
+* Compute the Cartesian square for a one-dimensional double-precision floating-point ndarray.
+*
+* @module @stdlib/blas-ext-base-ndarray-dcartesian-square
+*
+* @example
+* var Float64Vector = require( '@stdlib/ndarray-vector-float64' );
+* var zeros = require( '@stdlib/ndarray-zeros' );
+* var dcartesianSquare = require( '@stdlib/blas-ext-base-ndarray-dcartesian-square' );
+*
+* var x = new Float64Vector( [ 1.0, 2.0 ] );
+* var out = zeros( [ 4, 2 ], {
+*     'dtype': 'float64'
+* });
+*
+* var v = dcartesianSquare( [ x, out ] );
+* // returns <ndarray>[ [ 1.0, 1.0 ], [ 1.0, 2.0 ], [ 2.0, 1.0 ], [ 2.0, 2.0 ] ]
+*
+* var bool = ( v === out );
+* // returns true
+*/
+
+// MODULES //
+
+var main = require( './main.js' );
+
+
+// EXPORTS //
+
+module.exports = main;
